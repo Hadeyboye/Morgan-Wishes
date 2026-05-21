@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Your Wish to Morgan Wallen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+        
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), 
+                             url('https://picsum.photos/id/1015/2000/1200');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .form-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+        }
+        
+        .wish-input { resize: vertical; min-height: 140px; }
+        
+        .success-message { animation: fadeIn 0.5s ease; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white">
+    <!-- Navbar -->
+    <nav class="bg-black/80 backdrop-blur-md border-b border-white/10 fixed w-full z-50">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-guitar text-amber-500 text-3xl"></i>
+                <div>
+                    <span class="font-bold text-2xl tracking-tight">Morgan Wallen</span>
+                    <p class="text-[10px] text-zinc-400 -mt-1">Fan Wishes</p>
+                </div>
+            </div>
+            <a href="#form" 
+               class="bg-white text-black px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-amber-400 hover:text-black transition-all flex items-center gap-2">
+                <i class="fa-solid fa-paper-plane"></i>
+                SEND YOUR WISH
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full mb-6 text-sm">
+                <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span class="font-medium">Now accepting wishes for 2026</span>
+            </div>
+            
+            <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6" 
+                style="font-family: 'Playfair Display', sans-serif;">
+                SEND YOUR<br>WISH TO<br><span class="text-amber-400">MORGAN WALLEN</span>
+            </h1>
+            
+            <p class="max-w-md mx-auto text-lg text-zinc-300 mb-10">
+                Share your personal message, story, or wish. 
+                All submissions are forwarded directly to Morgan Wallen's team.
+            </p>
+            
+            <a href="#form" 
+               class="inline-block bg-amber-400 hover:bg-amber-300 text-black px-10 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 transition-all">
+                <i class="fa-solid fa-heart"></i>
+                WRITE YOUR WISH NOW
+            </a>
+        </div>
+    </header>
+
+    <!-- Form Section -->
+    <section id="form" class="py-24 bg-zinc-900">
+        <div class="max-w-2xl mx-auto px-6">
+            <div class="form-card rounded-3xl shadow-2xl p-10 md:p-14 border border-zinc-100">
+                <div class="text-center mb-10">
+                    <h2 class="text-4xl font-bold text-zinc-900 mb-3">Your Message to Morgan</h2>
+                    <p class="text-zinc-600">Every wish is personally reviewed. Be heartfelt.</p>
+                </div>
+
+                <form id="wishForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
+                    <!-- Your Access Key -->
+                    <input type="hidden" name="access_key" value="ff44f97f-d3e1-4629-be3e-bf4ff7117153">
+                    <input type="hidden" name="subject" value="New Morgan Wallen Fan Wish Submission">
+                    <input type="hidden" name="from_name" value="Morgan Wallen Wish Portal">
+                    <input type="hidden" name="replyto" value="ronaldwadetrawick@gmail.com">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-700 mb-2">Full Name *</label>
+                            <input type="text" name="full_name" required
+                                   class="w-full px-5 py-4 border border-zinc-300 rounded-2xl focus:outline-none focus:border-amber-400 text-zinc-900"
+                                   placeholder="Your full name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-700 mb-2">Email Address *</label>
+                            <input type="email" name="email" required
+                                   class="w-full px-5 py-4 border border-zinc-300 rounded-2xl focus:outline-none focus:border-amber-400 text-zinc-900"
+                                   placeholder="your@email.com">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-700 mb-2">Phone (Optional)</label>
+                            <input type="tel" name="phone"
+                                   class="w-full px-5 py-4 border border-zinc-300 rounded-2xl focus:outline-none focus:border-amber-400 text-zinc-900"
+                                   placeholder="+234 801 234 5678">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-700 mb-2">City & Country *</label>
+                            <input type="text" name="location" required
+                                   class="w-full px-5 py-4 border border-zinc-300 rounded-2xl focus:outline-none focus:border-amber-400 text-zinc-900"
+                                   placeholder="Lagos, Nigeria">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-zinc-700 mb-2">Your Wish / Message to Morgan *</label>
+                        <textarea name="message" required rows="6"
+                                  class="wish-input w-full px-5 py-4 border border-zinc-300 rounded-3xl focus:outline-none focus:border-amber-400 text-zinc-900"
+                                  placeholder="Hey Morgan..."></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-700 mb-2">Favorite Song</label>
+                            <input type="text" name="favorite_song"
+                                   class="w-full px-5 py-4 border border-zinc-300 rounded-2xl focus:outline-none focus:border-amber-400 text-zinc-900"
+                                   placeholder="Whiskey Glasses">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-700 mb-2">How did you discover him?</label>
+                            <input type="text" name="discovery"
+                                   class="w-full px-5 py-4 border border-zinc-300 rounded-2xl focus:outline-none focus:border-amber-400 text-zinc-900"
+                                   placeholder="Radio / TikTok / Concert">
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <input type="checkbox" id="consent" required class="mt-1 w-5 h-5 accent-amber-400">
+                        <label for="consent" class="text-sm text-zinc-600 leading-tight">
+                            I consent to my message being sent to Morgan Wallen's team and understand it may be reviewed.
+                        </label>
+                    </div>
+
+                    <button type="submit"
+                            class="w-full bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-500 hover:to-yellow-600 text-black font-bold text-xl py-6 rounded-3xl flex items-center justify-center gap-3 transition-all active:scale-[0.985]">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        SEND WISH TO MORGAN
+                    </button>
+                </form>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="hidden success-message text-center py-8">
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-green-100 text-green-600 rounded-2xl mb-6">
+                        <i class="fa-solid fa-check text-4xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-zinc-900 mb-2">Wish Sent Successfully!</h3>
+                    <p class="text-zinc-600">Thank you! Your message has been forwarded to <strong>ronaldwadetrawick@gmail.com</strong>.</p>
+                    <button onclick="resetForm()" 
+                            class="mt-8 text-amber-500 hover:text-amber-600 font-semibold flex items-center gap-2 mx-auto">
+                        <i class="fa-solid fa-rotate"></i>
+                        SEND ANOTHER WISH
+                    </button>
+                </div>
+            </div>
+
+            <p class="text-center text-zinc-500 text-xs mt-8">
+                All submissions are forwarded directly to ronaldwadetrawick@gmail.com
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-6 text-center text-zinc-500 text-sm">
+            <p>This is a fan-created tribute page • Not officially affiliated with Morgan Wallen</p>
+            <p class="mt-2">© 2026 Fan Wishes Project</p>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('wishForm');
+        const successMsg = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function(e) {
+            setTimeout(() => {
+                form.classList.add('hidden');
+                successMsg.classList.remove('hidden');
+            }, 800);
+        });
+
+        function resetForm() {
+            form.reset();
+            form.classList.remove('hidden');
+            successMsg.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
